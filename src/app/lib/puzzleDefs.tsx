@@ -9,12 +9,12 @@ export function getAllDirectories() {
         .map((dirent: any) => dirent.name);
 }
 export function importAllOfType(type: string): string[] {
-    console.log("importAllOfType:", `${puzzlePath}/${type}`)
-    console.log("dirname:", __dirname)
-    console.log("public", fs.readdirSync("./public"))
-    console.log("puzzlePath", fs.readdirSync(puzzlePath))
-
-    return fs.readdirSync(`${puzzlePath}/${type}`).filter((file: string) => {
+    console.log(__dirname)
+    console.log(process.cwd())
+    const publicDir = path.join(process.cwd(), "public");
+    const puzzleDir = path.join(publicDir, "puzzles");
+    const files = fs.readdirSync(path.join(puzzleDir, type));
+    return files.filter((file: string) => {
         const fileExtension = path.extname(file).toLowerCase();
         return (
             // fileExtension === ".png" ||
