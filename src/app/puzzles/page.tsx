@@ -52,7 +52,7 @@ export default function Puzzles({
             <div
                 className={clsx(
                     {
-                        "grid gap-2 bg-amber-100 sm:grid-cols-2 md:grid-cols-3":
+                        "mx-auto grid max-w-[1200px] gap-2 bg-amber-100 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4":
                             puzzles.length > 0,
                         "flex flex-col items-center bg-amber-200":
                             puzzles.length === 0,

@@ -12,7 +12,7 @@ export default function PuzzleCard({
 }) {
     return (
         <Link
-            className="rounded-lg  hover:scale-[1.03] hover:bg-blue-400 lg:hover:scale-[1.01]"
+            className="mx-auto  max-w-[80%] rounded-lg hover:scale-[1.03] hover:bg-blue-400 sm:max-w-[500px] lg:hover:scale-[1.01]"
             href={
                 href.includes("pieces")
                     ? `${href}?type=${image}&index=${index}`

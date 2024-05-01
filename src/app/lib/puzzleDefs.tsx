@@ -9,8 +9,8 @@ export function getAllDirectories() {
         .map((dirent: any) => dirent.name);
 }
 export function importAllOfType(type: string): string[] {
-    console.log(__dirname)
-    console.log(process.cwd())
+    // console.log(__dirname)
+    // console.log(process.cwd())
     const publicDir = path.join(process.cwd(), "public");
     const puzzleDir = path.join(publicDir, "puzzles");
     const files = fs.readdirSync(path.join(puzzleDir, type));
