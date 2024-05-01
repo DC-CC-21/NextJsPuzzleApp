@@ -1,4 +1,4 @@
-import BackBanner from "../ui/backBanner";
+import BackBanner from "@/app/ui/backBanner";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (

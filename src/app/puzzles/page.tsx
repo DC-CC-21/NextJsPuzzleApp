@@ -1,5 +1,5 @@
-import PuzzleCard from "../ui/puzzleCard";
-import { importAllOfType } from "../lib/puzzleDefs";
+import PuzzleCard from "@/app/ui/puzzleCard";
+import { importAllOfType } from "@/app/lib/puzzleDefs";
 import clsx from "clsx";
 import Link from "next/link";
 

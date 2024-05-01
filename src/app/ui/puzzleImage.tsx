@@ -1,4 +1,4 @@
-import { importAllOfType } from "../lib/puzzleDefs";
+import { importAllOfType } from "@/app/lib/puzzleDefs";
 
 export default function PuzzleImage({
     image,

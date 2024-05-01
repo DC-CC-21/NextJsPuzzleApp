@@ -1,5 +1,4 @@
-import Header from "./ui/header";
-import PuzzleCards from "./ui/puzzleCards";
+import PuzzleCards from "@/app/ui/puzzleCards";
 
 export default function Home() {
     return (

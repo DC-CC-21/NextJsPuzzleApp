@@ -1,5 +1,5 @@
-import { getAllDirectories, importAllOfType } from "../lib/puzzleDefs";
-import PuzzleCard from "./puzzleCard";
+import { getAllDirectories, importAllOfType } from "@/app/lib/puzzleDefs";
+import PuzzleCard from "@/app/ui/puzzleCard";
 
 export default function PuzzleCards({ href }: { href: string }) {
     const images: Array<string> = getAllDirectories();

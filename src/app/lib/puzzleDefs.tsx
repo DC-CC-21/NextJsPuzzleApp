@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const puzzlePath = "./public/puzzles";
+const puzzlePath = "public/puzzles";
 
 export function getAllDirectories() {
     return fs
