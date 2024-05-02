@@ -11,7 +11,7 @@ const canvas2 = document.getElementById("createCanvas");
 const ctx2 = canvas2.getContext("2d");
 
 // > Set the quality of the canvas)
-const quality = 2; //! keep below 4
+const quality = 1; //! keep below 4
 
 // > Update the quality of the canvas
 setCanvasQuality(
