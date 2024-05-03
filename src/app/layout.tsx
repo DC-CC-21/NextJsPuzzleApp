@@ -22,7 +22,6 @@ export default function RootLayout({
                 className={`flex min-h-[100vh] flex-col ${inter.className}`}
                 suppressHydrationWarning={true}
             >
-                <Header />
                 {children}
                 <SpeedInsights />
             </body>

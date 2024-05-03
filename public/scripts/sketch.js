@@ -21,7 +21,7 @@ setCanvasQuality(
 );
 
 // > Hide the scrollbars
-document.body.style.overflow = "hidden";
+// document.body.style.overflow = "hidden";
 
 // > Get the checkboxes by id
 const minimap = document.getElementById("minimap");
@@ -32,7 +32,7 @@ const fps = document.getElementById("fps");
 const puzzleImage = new Image();
 let imageURL = [puzzleType, puzzleIndex, pieceCount];
 let grid = ~~Math.sqrt(Number(imageURL[2]));
-puzzleImage.src = `${imageURL[0]}/${imageURL[1]}`;
+puzzleImage.src = `puzzles/${imageURL[0]}/${imageURL[1]}`;
 
 const testing = false;
 

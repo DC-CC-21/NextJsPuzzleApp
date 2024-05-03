@@ -1,8 +1,8 @@
 "use client";
 export default function Play() {
     return (
-        <div className="h-screen w-screen select-none overflow-hidden bg-slate-300">
-            <div className="flex flex-row justify-between bg-slate-300 pr-2 [&>label]:flex [&>label]:flex-row [&>label]:items-center [&>label]:p-2">
+        <div className="max-h-[100vh] w-screen select-none overflow-hidden bg-slate-300">
+            <div className="max-h-20 flex flex-row justify-between bg-slate-300 pr-2 [&>label]:flex [&>label]:flex-row [&>label]:items-center [&>label]:p-2">
                 <label>
                     Show Minimap:{" "}
                     <input
@@ -19,7 +19,7 @@ export default function Play() {
                         id="check"
                     />
                 </label>
-                <label>
+                <label className="!hidden">
                     Fps:{" "}
                     <span id="fps" className="text-xl text-green-700">
                         245

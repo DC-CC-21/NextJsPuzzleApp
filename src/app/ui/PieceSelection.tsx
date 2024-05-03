@@ -47,7 +47,7 @@ export default function PieceSelection({
                             active,
                     },
                 )}
-                href={`/puzzles/play?type=${image}&index=${index}&pieceCount=${pieceCount}`}
+                href={`/play?type=${image}&index=${index}&pieceCount=${pieceCount}`}
             >
                 Play
             </a>
