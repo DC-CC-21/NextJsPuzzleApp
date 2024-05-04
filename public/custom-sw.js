@@ -9,6 +9,8 @@
 //     }
 //     event.ports[0].postMessage(true);
 //   });
-self.addEventListener("fetch", function (event) {
-    event.respondWith(fetch(event.request));
-});
+
+//!
+//2: self.addEventListener("fetch", function (event) {
+//     event.respondWith(fetch(event.request));
+// });
