@@ -2,7 +2,7 @@
 export default function Play() {
     return (
         <div className="max-h-[100vh] w-screen select-none overflow-hidden bg-slate-300">
-            <div className="max-h-20 flex flex-row justify-between bg-slate-300 pr-2 [&>label]:flex [&>label]:flex-row [&>label]:items-center [&>label]:p-2">
+            <div className="flex max-h-20 flex-row justify-between bg-slate-300 pr-2 [&>label]:flex [&>label]:flex-row [&>label]:items-center [&>label]:p-2">
                 <label>
                     Show Minimap:{" "}
                     <input

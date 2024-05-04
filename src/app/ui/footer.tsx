@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <div className="flex flex-col items-center bg-green-400 p-2 md:grid md:grid-cols-2">
+        <div className="flex flex-col items-center justify-around bg-green-400 p-5 md:flex md:flex-row">
             <a href="/">
                 <img
                     className="rounded-lg"

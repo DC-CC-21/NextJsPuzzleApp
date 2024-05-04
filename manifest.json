@@ -1,0 +1,114 @@
+{
+    "name": "Puzzle App",
+    "short_name": "Puzzle App",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "./icons/192x192x1.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/512x512x1.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/384x384x2-2x.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/1024x1024x2-2x.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ],
+    "splash_pages": [
+        {
+            "src": "./splashes/1136x640x2.0.png",
+            "media": "(device-width: 1136px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/2436x1125x3.0.png",
+            "media": "(device-width: 2436px) and (device-height: 1125px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/1792x828x3.0.png",
+            "media": "(device-width: 1792px) and (device-height: 828px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/828x1792x3.0.png",
+            "media": "(device-width: 828px) and (device-height: 1792px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/1334x750x2.0.png",
+            "media": "(device-width: 1334px) and (device-height: 750px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/1242x2688x3.0.png",
+            "media": "(device-width: 1242px) and (device-height: 2688px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/2208x1242x3.0.png",
+            "media": "(device-width: 2208px) and (device-height: 1242px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/1125x2436x3.0.png",
+            "media": "(device-width: 1125px) and (device-height: 2436px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/1242x2208x3.0.png",
+            "media": "(device-width: 1242px) and (device-height: 2208px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/2732x2048x2.0.png",
+            "media": "(device-width: 2732px) and (device-height: 2048px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/2688x1242x3.0.png",
+            "media": "(device-width: 2688px) and (device-height: 1242px) and (-webkit-device-pixel-ratio: 3.0)"
+        },
+        {
+            "src": "./splashes/2224x1668x2.0.png",
+            "media": "(device-width: 2224px) and (device-height: 1668px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/750x1334x2.0.png",
+            "media": "(device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/2048x2732x2.0.png",
+            "media": "(device-width: 2048px) and (device-height: 2732px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/2388x1668x2.5.png",
+            "media": "(device-width: 2388px) and (device-height: 1668px) and (-webkit-device-pixel-ratio: 2.5)"
+        },
+        {
+            "src": "./splashes/1668x2224x2.5.png",
+            "media": "(device-width: 1668px) and (device-height: 2224px) and (-webkit-device-pixel-ratio: 2.5)"
+        },
+        {
+            "src": "./splashes/640x1136x2.0.png",
+            "media": "(device-width: 640px) and (device-height: 1136px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/1668x2388x2.5.png",
+            "media": "(device-width: 1668px) and (device-height: 2388px) and (-webkit-device-pixel-ratio: 2.5)"
+        },
+        {
+            "src": "./splashes/2048x1536x2.0.png",
+            "media": "(device-width: 2048px) and (device-height: 1536px) and (-webkit-device-pixel-ratio: 2.0)"
+        },
+        {
+            "src": "./splashes/1536x2048x2.0.png",
+            "media": "(device-width: 1536px) and (device-height: 2048px) and (-webkit-device-pixel-ratio: 2.0)"
+        }
+    ]
+}

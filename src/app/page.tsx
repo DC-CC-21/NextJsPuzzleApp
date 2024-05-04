@@ -11,7 +11,7 @@ export default function Home() {
                     <PuzzleCards href="/puzzles" />
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </>
     );
 }
