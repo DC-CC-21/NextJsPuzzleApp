@@ -18,14 +18,20 @@ function setCanvasQuality(canvas, w, h) {
     canvas.style.width = canvas.width / quality + "px";
     canvas.style.height = canvas.height / quality + "px";
 } //draw piece shape
-function createPiece(x, y, w, h, pos, s, b, ctx = ctx) {
+function createPiece(x, y, w, h, pos, s, b, ctx = ctx, testing = false) {
     let connectorL = 0.15;
     let connectorS = 0.13;
     let bevel = 1.2;
     ctx.beginPath();
+
+    if (testing) {
+        w = w * 0.8;
+        h = h * 0.8;
+    }
     ctx.save();
     ctx.translate(x, y);
 
+    // LEFT
     ctx.lineTo(0, h / 2 + h * connectorS * s[3]);
     ctx.lineTo(
         w * connectorL * pos[3],
@@ -40,6 +46,7 @@ function createPiece(x, y, w, h, pos, s, b, ctx = ctx) {
 
     //TOP
     ctx.lineTo(w / 2 - w * connectorS * s[0], 0);
+
     ctx.lineTo(
         w / 2 - w * connectorS * bevel * b[0] * s[0],
         h * connectorL * pos[0],
@@ -48,10 +55,12 @@ function createPiece(x, y, w, h, pos, s, b, ctx = ctx) {
         w / 2 + w * connectorS * bevel * b[0] * s[0],
         h * connectorL * pos[0],
     );
+
     ctx.lineTo(w / 2 + w * connectorS * s[0], 0);
     ctx.lineTo(w, 0);
 
     ctx.lineTo(w, h / 2 - h * connectorS * s[1]);
+
     ctx.lineTo(
         w + w * connectorL * pos[1],
         h / 2 - h * connectorS * bevel * b[1] * s[1],
@@ -60,10 +69,12 @@ function createPiece(x, y, w, h, pos, s, b, ctx = ctx) {
         w + w * connectorL * pos[1],
         h / 2 + h * connectorS * bevel * b[1] * s[1],
     );
+
     ctx.lineTo(w, h / 2 + h * connectorS * s[1]);
     ctx.lineTo(w, h);
 
     ctx.lineTo(w / 2 + w * connectorS * s[2], h);
+
     ctx.lineTo(
         w / 2 + w * connectorS * bevel * b[2] * s[2],
         h + h * connectorL * pos[2],
@@ -72,13 +83,19 @@ function createPiece(x, y, w, h, pos, s, b, ctx = ctx) {
         w / 2 - w * connectorS * bevel * b[2] * s[2],
         h + h * connectorL * pos[2],
     );
+
     ctx.lineTo(w / 2 - w * connectorS * s[2], h);
 
     ctx.lineTo(0, h);
 
     ctx.fill();
     ctx.strokeStyle = "#0f0";
-    // ctx.stroke();
+    // apply stroke
+    // ctx.strokeStyle = "black";
+    if (testing) {
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    }
     ctx.restore();
 }
 
@@ -105,4 +122,12 @@ function constrain(aNumber, aMin, aMax) {
 }
 function random(min, max) {
     return Math.random() * (max - min) + min;
+}
+
+function random1(min, max) {
+    if (Math.random() > 0.5) {
+        return random(min, max);
+    } else {
+        return random(-max, -min);
+    }
 }

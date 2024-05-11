@@ -53,6 +53,7 @@ class Piece {
 
         ctx.save();
         ctx.translate(size, size);
+
         createPiece(
             0,
             0,
@@ -62,6 +63,7 @@ class Piece {
             this.s,
             this.b,
             ctx,
+            testing,
         );
         ctx.clip();
         ctx.drawImage(

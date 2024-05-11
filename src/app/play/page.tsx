@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+
 export default function Play() {
     return (
         <div className="max-h-[100vh] w-screen select-none overflow-hidden bg-slate-300">
@@ -32,6 +34,18 @@ export default function Play() {
                 >
                     Shuffle
                 </button>
+            </div>
+            <div
+                id="finish"
+                className="absolute left-[50%] top-[50%] hidden translate-x-[-50%] translate-y-[-50%] flex-col items-center rounded-2xl border-2 border-black bg-slate-100 p-2 text-xl"
+            >
+                <p>Congratulations</p>
+                <Link
+                    href="/"
+                    className=" rounded-xl border-2 border-purple-400 bg-green-400 p-2"
+                >
+                    Choose another puzzle
+                </Link>
             </div>
             <canvas id="mycanvas" suppressHydrationWarning={true}></canvas>
             <canvas

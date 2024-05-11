@@ -20,7 +20,7 @@ function clickPiece(x, y) {
         if (!pieces[i].isEdge && edgesOnly.checked) {
             continue;
         }
-        if (pieces[i].isin(x, y)) {
+        if (pieces[i].isin(x, y) && !pieces[i].placed) {
             pieces.splice(pieces.length - 1, 0, pieces.splice(i, 1)[0]);
             selectedPiece = pieces.length - 1;
             pieces[selectedPiece].clicked = true;

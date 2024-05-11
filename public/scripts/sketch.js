@@ -11,7 +11,7 @@ const canvas2 = document.getElementById("createCanvas");
 const ctx2 = canvas2.getContext("2d");
 
 // > Set the quality of the canvas)
-const quality = 1; //! keep below 4
+const quality = 2; //! keep below 4
 
 // > Update the quality of the canvas
 setCanvasQuality(
@@ -76,9 +76,14 @@ let dragged = false;
 //> Loop through the x and y direction of the pieces and assign random values to the arrays
 for (let i = 0; i < piecePos.length; i++) {
     for (let j = 0; j < piecePos[i].length; j++) {
-        piecePos[i][j] = 0.5 + Math.random();
-        pieceS[i][j] = 0.5 + Math.random();
-        pieceB[i][j] = 1 + random(-0.5, 0.5);
+        //? piecePos[i][j] = 0.5 + Math.random();
+        piecePos[i][j] = random1(0.5, 1.5);
+
+        //? pieceS[i][j] = 0.5 + Math.random();
+        pieceS[i][j] = random(0.5, 1.5);
+
+        //? pieceB[i][j] = 1 + random(-0.5, 0.5);
+        pieceB[i][j] = random(0.1, 1.5);
     }
 }
 
@@ -124,6 +129,8 @@ function gameLoop() {
     return fps;
 }
 
+let placedPieces = 0;
+
 function draw() {
     let frames = gameLoop(); //# get the fps
     frameCount += 0.01;
@@ -152,6 +159,7 @@ function draw() {
     ctx.fillRect(offset.x, offset.y, size * grid, size * grid);
 
     // > Render each puzzle piece
+    placedPieces = 0;
     pieces.forEach((piece) => {
         // > If edgesOnly is checked, only render the edges
         if (piece.isEdge && edgesOnly.checked) {
@@ -159,8 +167,18 @@ function draw() {
         } else if (!edgesOnly.checked) {
             piece.draw(ctx);
         }
+        if (piece.placed) {
+            placedPieces += 1;
+        }
     });
 
+    if (placedPieces == grid * grid) {
+        let finishEl = document.getElementById("finish");
+        if (finishEl) {
+            finishEl.style.display = "flex";
+        }
+        return;
+    }
     // > Continue animation
     requestAnimationFrame(draw);
 }

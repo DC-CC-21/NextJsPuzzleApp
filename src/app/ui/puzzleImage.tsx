@@ -7,14 +7,19 @@ export default function PuzzleImage({
     image: string;
     index: number;
 }) {
-    let imagePath = importAllOfType(image)[index];
+    let imagePath = "custom";
+    if (image !== "custom") {
+        imagePath = importAllOfType(image)[index];
+    }
     return (
         <div className="flex h-full flex-col overflow-hidden rounded-lg border-[3px] border-fuchsia-500 bg-blue-500">
             <div className="h-full w-full">
                 <img
                     src={
                         imagePath
-                            ? `/puzzles/${image}/${imagePath}`
+                            ? imagePath.includes("custom")
+                                ? "/puzzles/camera_medium.webp"
+                                : `/puzzles/${image}/${imagePath}`
                             : "/puzzles/noImageFound_medium.webp"
                     }
                     alt={`No image found for ${image}`}
