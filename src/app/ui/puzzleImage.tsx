@@ -23,6 +23,7 @@ export default function PuzzleImage({
                             : "/puzzles/noImageFound_medium.webp"
                     }
                     alt={`No image found for ${image}`}
+                    loading="lazy"
                 />
             </div>
             <h2 className="p-2 text-center">{image}</h2>
