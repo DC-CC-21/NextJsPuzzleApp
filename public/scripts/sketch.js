@@ -32,7 +32,12 @@ const fps = document.getElementById("fps");
 const puzzleImage = new Image();
 let imageURL = [puzzleType, puzzleIndex, pieceCount];
 let grid = ~~Math.sqrt(Number(imageURL[2]));
-puzzleImage.src = `puzzles/${imageURL[0]}/${imageURL[1]}`;
+
+if (imageURL[0] === "custom") {
+    puzzleImage.src = localStorage.getItem("customPuzzle");
+} else {
+    puzzleImage.src = `puzzles/${imageURL[0]}/${imageURL[1]}`;
+}
 
 const testing = false;
 

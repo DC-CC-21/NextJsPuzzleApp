@@ -2,8 +2,10 @@ import PuzzleCard from "@/app/ui/puzzleCard";
 import { importAllOfType } from "@/app/lib/puzzleDefs";
 import clsx from "clsx";
 import Link from "next/link";
+import { Suspense } from "react";
+import PuzzleImageSkeleton from "../ui/puzzleImageSkeleton";
 
-export default function Puzzles({
+export default async function Puzzles({
     params,
     searchParams,
 }: {
@@ -13,19 +15,30 @@ export default function Puzzles({
     let puzzleType = searchParams?.type;
     let puzzles: string[] = [];
     if (typeof puzzleType === "string") {
-        puzzles = importAllOfType(puzzleType);
+        puzzles = await importAllOfType(puzzleType);
     }
 
     let HTMLContent;
     if (puzzles.length) {
         HTMLContent = puzzles.map((image: string, index: number) => {
             return (
-                <PuzzleCard
+                <Suspense
+                    fallback={
+                        <PuzzleImageSkeleton image={"Loading..."}>
+                            <img
+                                src="/puzzles/noImageFound_medium.webp"
+                                alt="hello world"
+                            />
+                        </PuzzleImageSkeleton>
+                    }
                     key={`${image}${index}`}
-                    image={puzzleType ? puzzleType.toString() : ""}
-                    index={index}
-                    href="/puzzles/pieces"
-                />
+                >
+                    <PuzzleCard
+                        image={puzzleType ? puzzleType.toString() : ""}
+                        index={index}
+                        href="/puzzles/pieces"
+                    />
+                </Suspense>
             );
         });
     } else {
