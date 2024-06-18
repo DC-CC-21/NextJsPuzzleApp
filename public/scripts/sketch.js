@@ -18,6 +18,7 @@ setCanvasQuality(
     canvas,
     window.innerWidth,
     window.innerHeight - boundingClientRect.top,
+    quality
 );
 
 // > Hide the scrollbars

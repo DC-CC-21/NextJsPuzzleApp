@@ -14,7 +14,7 @@ export default function PieceSelection({
 
     return (
         <div className="flex flex-col items-center">
-            <div className="mx-auto flex w-80 flex-row items-center gap-2 p-2">
+            <div className="mx-auto flex flex-row items-center gap-2 p-2 w-[95%]">
                 {[9, 25, 64, 100, 144, 196].map((pieceCount: number) => {
                     return (
                         <label

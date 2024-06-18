@@ -12,7 +12,7 @@ function setCanvasSize(canvas, w, h) {
     canvas.style.width = canvas.width + "px";
     canvas.style.height = canvas.height + "px";
 }
-function setCanvasQuality(canvas, w, h) {
+function setCanvasQuality(canvas, w, h, quality) {
     canvas.width = w * quality;
     canvas.height = h * quality;
     canvas.style.width = canvas.width / quality + "px";
