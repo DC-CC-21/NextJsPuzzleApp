@@ -6,17 +6,19 @@ export function getQueries() {
     let pieceCount = queries.get("pieceCount");
     return { puzzleType, puzzleIndex, pieceCount };
 }
-export function setCanvasSize(canvas: any, w: number, h: number) {
-    canvas.width = w;
-    canvas.height = h;
-    canvas.style.width = canvas.width + "px";
-    canvas.style.height = canvas.height + "px";
-}
-export function setCanvasQuality(canvas: any, w: number, h: number, quality: number) {
-    canvas.width = w * quality;
-    canvas.height = h * quality;
-    canvas.style.width = canvas.width / quality + "px";
-    canvas.style.height = canvas.height / quality + "px";
+// export function setCanvasSize(canvas: any, w: number, h: number) {
+//     canvas.width = w;
+//     canvas.height = h;
+//     canvas.style.width = canvas.width + "px";
+//     canvas.style.height = canvas.height + "px";
+// }
+export function setCanvasQuality(canvas: any, ctx:CanvasRenderingContext2D, w: number, h: number, quality: number) {
+    console.log(canvas.style.width, canvas.style.height)
+    console.log(canvas.width, canvas.height)
+    canvas.style.width = w + "px";
+    canvas.style.height = w + "px";
+    canvas.width = canvas.width*quality;
+    canvas.height = canvas.height*quality;
 } //draw piece shape
 export function createPiece(x:number, y:number, w:number, h:number, pos:any, s:any, b:any, ctx:any, testing = false) {
     let connectorL = 0.15;

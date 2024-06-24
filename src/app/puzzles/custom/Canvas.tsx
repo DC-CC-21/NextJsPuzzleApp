@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { setCanvasQuality, setCanvasSize } from "@/app/lib/canvasUtils";
+import { setCanvasQuality } from "@/app/lib/canvasUtils";
 
 function readImage(
     input: HTMLInputElement,
@@ -18,6 +18,7 @@ function readImage(
         img.onload = function () {
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
             const data = canvas.toDataURL("image/jpeg", 1);
+            console.log(`${data.length / 1024 / 1024}mb`);
             localStorage.setItem("customPuzzle", data);
         };
     }
@@ -26,16 +27,19 @@ function readImage(
 type Props = React.CanvasHTMLAttributes<HTMLCanvasElement>;
 function Canvas({ props }: { props: Props }) {
     const canvasRef: any = useRef(null);
-    const quality = 1;
+    const quality = 2;
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        setCanvasQuality(canvas, window.innerWidth, window.innerWidth, quality);
-        setCanvasSize(canvas, canvas.width * 0.6, canvas.height * 0.6);
+        const width = Math.min(400, window.innerWidth*0.8)
         const ctx = canvas.getContext("2d");
+        setCanvasQuality(canvas, ctx, width, width, quality);
+        // setCanvasSize(canvas, canvas.width, canvas.height);
 
-        ctx.fillStyle = "#00ffff";
+        ctx.fillStyle = "#ff0000";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#00ffff";
+        ctx.fillRect(-100, 0, canvas.width, canvas.height);
 
         let customFileEl = document.getElementById(
             "customFile",
