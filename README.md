@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="./reademe.png" alt="Banner image">
 
-## Getting Started
+# Puzzles
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+-   [Table of Contents](#overview)
+-   [Project Planning](#project-planning)
+-   [Initial Setup](#initial-setup)
+-   [Core Features Development](#core-features-development)
+-   [PWA Enhancements](#pwa-enhancements)
+
+## Overview
+
+Puzzles is a PWA (progressive web app) that allows users to build puzzles from either a selection of pre-uploaded images or upload an image of their own.
+
+This project started in late 2022 because I liked building puzzles, and I decided that the puzzle apps had too many ads, or they did not include the functionality I wanted. In addition to this, I was also interested in learning more about building websites, and this type of project would give me exposure to HTML canvas actions, building dynamic webpages, and the basics of working with URL parameters. Even though this project does not use Node.js anymore because it evolved to using Next.js, I was exposed to many different technologies and languages as I settled on the tech stack I wanted to use.
+
+## Project Planning
+
+The goal of this application was to have a custom built application that would allow users to build puzzles on their device using either pre-uploaded or their own images.
+
+#### Original Tech Stack
+
+###### Backend:
+
+-   Node.js, Express.js
+
+###### Frontend:
+
+-   EJS,
+
+###### Database
+
+-   MongoDB
+
+###### Image processing and uploads:
+
+-   Multer, Sharp
+
+#### Current Tech Stack
+
+###### Backend & Frontend:
+
+-   Next.js, TypeScript
+
+## Initial Setup
+
+### Project Initialization
+
+When I started building this project, I was taking a course on Node.js. Since I was new to web development, I decided to use Node.js as the backend for my project. However, as I progressed and learned more about other languages, I decided to revisit this project and make some changes.
+
+### Framework Change
+
+One of the biggest changes was the web framework. I was now learning React and Next.js, and I thought refactoring this project would help me learn the language more quickly by giving me experience building applications with it.
+
+### Revisiting Image Requirements
+
+Second was the way custom images were being handled. When I switched the web framework, I revisited the requirements for this application. Since I no longer needed a database, I decided to drop it. Multer and Sharp were being used for file uploads and image optimization, but when I switched from uploading to a database to using B64 encoded strings temporarily saved in LocalStorage for transferring uploaded images between pages, they no longer had a use.
+
+## Core Features Development
+
+After refactoring the structure and purpose of the website, I settled on three main features:
+
+1. The application needed to allow the user to easily build puzzles on any device, which meant it needed to be mobile friendly and the puzzle building script needed to work.
+2. The application needed to include pre-uploaded images because I might not always have a particular image I want to build, so having images on hand would be useful.
+3. Finally, on the occasion that I have an image in mind I want to build, I want that functionality to work, so custom images as an option was a must.
+
+## PWA Enhancements
+
+After the core features of the application were I decided to include the ability to add the application to the home screen to the users device because it feels more native and mobile friendly.
+
+## Running the App
+
+This project bootstrapped with `create-next-app`.
+
+### Running the App
+
+First Install Dependencies
+`npm install`
+
+Second, run the development server:
+`npm run dev`
+
+Other Commands
+
+```
+# Build application
+npm run build
+
+# Run build preview
+npm run start
+
+# Lint code
+npm run lint
+
+# Format code
+npm run format
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open http://localhost:3000 with your browser to see the result.
